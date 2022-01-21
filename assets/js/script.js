@@ -2,11 +2,6 @@
 
 let userText = $("#userText");
 
-/* Rendering Current Date */
-
-let date = moment().format("MMMM Do, YYYY");
-$("#currentDay").text(date);
-
 /* Function to store and load user's input in Local Storage */
 
 $(document).ready(function(){
@@ -33,3 +28,38 @@ $(document).ready(function(){
     $("#8pm .description").val(localStorage.getItem("7pm"));
 });
 
+/* Rendering Current Date */
+
+let date = moment().format("MMMM Do, YYYY");
+let currentDate = function(){
+    $("#currentDay").text(date);
+};
+currentDate();
+
+/* Rendering current hour */
+let currentHour = moment().hour();
+
+/* Function to change the colours of time blocks based on current time */
+let = colourChange = function(){
+    $(".description").each(function () {
+        let hourBlock = parseInt($(this).attr("id"));
+    
+        if (hourBlock < currentHour) {
+          $(this).addClass("past");
+          console.log("hello")
+        }
+        else if (hourBlock === currentHour) {
+          $(this).removeClass("past");
+          $(this).addClass("present");
+          console.log("hello")
+        }
+        else {
+          $(this).removeClass("present")
+          $(this).removeClass("past")
+          $(this).addClass("future")
+          console.log("hello")
+        }
+    
+      });
+};
+colourChange();

@@ -1,6 +1,7 @@
 /* Global Variables */
 
 let userText = $("#userText");
+let textBox = $("textarea");
 
 /* Function to store and load user's input in Local Storage */
 
@@ -25,7 +26,8 @@ $(document).ready(function(){
     $("#5pm .description").val(localStorage.getItem("5pm"));
     $("#6pm .description").val(localStorage.getItem("6pm"));
     $("#7pm .description").val(localStorage.getItem("7pm"));
-    $("#8pm .description").val(localStorage.getItem("7pm"));
+    $("#8pm .description").val(localStorage.getItem("8pm"));
+    $("#9pm .description").val(localStorage.getItem("9pm"));
 });
 
 /* Rendering Current Date */
@@ -40,26 +42,46 @@ currentDate();
 let currentHour = moment().hour();
 
 /* Function to change the colours of time blocks based on current time */
-let = colourChange = function(){
-    $(".description").each(function () {
-        let hourBlock = parseInt($(this).attr("id"));
+textBox.each(function (colourChange) {
     
-        if (hourBlock < currentHour) {
-          $(this).addClass("past");
-          console.log("hello")
-        }
-        else if (hourBlock === currentHour) {
-          $(this).removeClass("past");
-          $(this).addClass("present");
-          console.log("hello")
-        }
-        else {
-          $(this).removeClass("present")
-          $(this).removeClass("past")
-          $(this).addClass("future")
-          console.log("hello")
-        }
+    if (currentHour > colourChange + 9) {
+      $(this).toggleClass("past");
+
+    }
+  
+    if (currentHour === colourChange + 9) {
+      $(this).toggleClass("present");
+    }
+  
+    if (currentHour < colourChange + 9) {
+      $(this).toggleClass("future");
+    }
+  });
+  
+
+
+
+// /* Function to change the colours of time blocks based on current time */
+// let = colourChange = function(){
+//     $(".description").each(function () {
+//         let hourBlock = parseInt($(this).attr("id"));
     
-      });
-};
-colourChange();
+//         if (hourBlock < currentHour) {
+//           $(this).addClass("past");
+//           console.log("hello")
+//         }
+//         else if (hourBlock === currentHour) {
+//           $(this).removeClass("past");
+//           $(this).addClass("present");
+//           console.log("hello")
+//         }
+//         else {
+//           $(this).removeClass("present")
+//           $(this).removeClass("past")
+//           $(this).addClass("future")
+//           console.log("hello")
+//         }
+    
+//       });
+// };
+// colourChange();

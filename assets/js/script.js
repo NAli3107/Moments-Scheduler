@@ -19,15 +19,15 @@ $(document).ready(function(){
     $("#10am .description").val(localStorage.getItem("10am"));
     $("#11am .description").val(localStorage.getItem("11am"));
     $("#12pm .description").val(localStorage.getItem("12pm"));
-    $("#1pm .description").val(localStorage.getItem("1pm"));
-    $("#2pm .description").val(localStorage.getItem("2pm"));
-    $("#3pm .description").val(localStorage.getItem("3pm"));
-    $("#4pm .description").val(localStorage.getItem("4pm"));
-    $("#5pm .description").val(localStorage.getItem("5pm"));
-    $("#6pm .description").val(localStorage.getItem("6pm"));
-    $("#7pm .description").val(localStorage.getItem("7pm"));
-    $("#8pm .description").val(localStorage.getItem("8pm"));
-    $("#9pm .description").val(localStorage.getItem("9pm"));
+    $("#13pm .description").val(localStorage.getItem("13pm"));
+    $("#14pm .description").val(localStorage.getItem("14pm"));
+    $("#15pm .description").val(localStorage.getItem("15pm"));
+    $("#16pm .description").val(localStorage.getItem("16pm"));
+    $("#17pm .description").val(localStorage.getItem("17pm"));
+    $("#18pm .description").val(localStorage.getItem("18pm"));
+    $("#19pm .description").val(localStorage.getItem("19pm"));
+    $("#20pm .description").val(localStorage.getItem("20pm"));
+    $("#21pm .description").val(localStorage.getItem("21pm"));
 });
 
 /* Rendering Current Date */

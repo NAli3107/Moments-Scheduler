@@ -41,47 +41,27 @@ currentDate();
 /* Rendering current hour */
 let currentHour = moment().hour();
 
+
 /* Function to change the colours of time blocks based on current time */
-textBox.each(function (colourChange) {
+let = colourChange = function(){
+    $(".time-block").each(function () {
+        let hourBlock = parseInt($(this).attr("id"));
+        if (hourBlock < currentHour) {
+          $(this).addClass("past");
+          console.log("hello")
+        }
+        else if (hourBlock === currentHour) {
+          $(this).removeClass("past");
+          $(this).addClass("present");
+          console.log("hello")
+        }
+        else {
+          $(this).removeClass("present")
+          $(this).removeClass("past")
+          $(this).addClass("future")
+          console.log("hello")
+        }
     
-    if (currentHour > colourChange + 9) {
-      $(this).toggleClass("past");
-
-    }
-  
-    if (currentHour === colourChange + 9) {
-      $(this).toggleClass("present");
-    }
-  
-    if (currentHour < colourChange + 9) {
-      $(this).toggleClass("future");
-    }
-  });
-  
-
-
-
-// /* Function to change the colours of time blocks based on current time */
-// let = colourChange = function(){
-//     $(".description").each(function () {
-//         let hourBlock = parseInt($(this).attr("id"));
-    
-//         if (hourBlock < currentHour) {
-//           $(this).addClass("past");
-//           console.log("hello")
-//         }
-//         else if (hourBlock === currentHour) {
-//           $(this).removeClass("past");
-//           $(this).addClass("present");
-//           console.log("hello")
-//         }
-//         else {
-//           $(this).removeClass("present")
-//           $(this).removeClass("past")
-//           $(this).addClass("future")
-//           console.log("hello")
-//         }
-    
-//       });
-// };
-// colourChange();
+      });
+};
+colourChange();

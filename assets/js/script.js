@@ -48,18 +48,15 @@ let = colourChange = function(){
         let hourBlock = parseInt($(this).attr("id"));
         if (hourBlock < currentHour) {
           $(this).addClass("past");
-          console.log("hello")
         }
         else if (hourBlock === currentHour) {
           $(this).removeClass("past");
           $(this).addClass("present");
-          console.log("hello")
         }
         else {
           $(this).removeClass("present")
           $(this).removeClass("past")
           $(this).addClass("future")
-          console.log("hello")
         }
     
       });
